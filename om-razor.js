@@ -3,7 +3,7 @@
   var OmRazor = root.OmRazor = {};
 
   OmRazor.domToOm = function (opts) {
-    var selector = opts.selector, elts = $(selector), tree, result = "(defn widget [data owner] \n";
+    var selector = opts.selector, elts = $(selector), tree, result = "(defn " + (opts.name||'widget') + " [data owner] \n";
     
     tree = OmRazor.domNodeToTree({
       elt:       elts,
