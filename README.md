@@ -2,10 +2,9 @@
 
 Cut, slice, a web page into [OM](https://github.com/swannodette/om) DOM builders.
 
-In the process of converting a [Bootstrap Theme](http://getbootstrap.com/), [SB Admin](http://startbootstrap.com/template-overviews/sb-admin/), I found the process of converting it into OM DOM builders very tedious.
+In found the process of converting a [Bootstrap Theme](http://getbootstrap.com/), [SB Admin](http://startbootstrap.com/template-overviews/sb-admin/), into OM DOM builders very tedious.
 
 Given the example markup, the process of conversion is largely rote.  This is quick hack to do just that.
-
 
 To run the code-generator, place the following script tags into your page:
 
