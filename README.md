@@ -14,17 +14,21 @@ To run the code-generator, place the following script tags into your page:
 
 Then open the javascript console and run `OmRazor.domToOm` pasing at a minimum the jQuery selector:
 
-    OmRazor.domToOm({selector: '.breadcrumb', name: 'breadcrumb'})
+```javascript
+OmRazor.domToOm({selector: '.breadcrumb', name: 'breadcrumb'})
+```
 
 When run for the SB Admin Theme, that produces:
 
-    (defn breadcrumb [data owner] 
-      (d/ol
-        #js {class: "breadcrumb"}
-        " "
-        (d/li
-          #js {class: "active"}
-          " Dashboard "
-          (d/i
-            #js {class: "fa fa-dashboard"}))))
+```clojure
+(defn breadcrumb [data owner] 
+  (d/ol
+    #js {class: "breadcrumb"}
+    " "
+    (d/li
+      #js {class: "active"}
+      " Dashboard "
+      (d/i
+        #js {class: "fa fa-dashboard"}))))
+```
 
