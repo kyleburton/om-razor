@@ -24,7 +24,7 @@
   OmRazor.attrsToCljsMap = function (attrs) {
     var pairs = [];
     $.each(attrs, function (key, val) {
-      pairs.push(key + ": " + JSON.stringify(val));
+      pairs.push(":" + key + "  " + JSON.stringify(val));
     }); 
     return '{' + pairs.join(", ") + '}';
   };

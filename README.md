@@ -9,8 +9,10 @@ Given the example markup, the process of conversion is largely rote.  This is qu
 
 To run the code-generator, place the following script tags into your page:
 
-    <script src="//ajax.googleapis.com/ajax/libs/jquery/2.1.1/jquery.min.js"></script>
-    <script src="/path/to/om-razor.js"></script>
+```html
+<script src="//ajax.googleapis.com/ajax/libs/jquery/2.1.1/jquery.min.js"></script>
+<script src="/path/to/om-razor.js"></script>
+```
 
 Then open the javascript console and run `OmRazor.domToOm` pasing at a minimum the jQuery selector:
 
@@ -23,12 +25,12 @@ When run for the SB Admin Theme, that produces:
 ```clojure
 (defn breadcrumb [data owner] 
   (d/ol
-    #js {class: "breadcrumb"}
+    #js {:class  "breadcrumb"}
     " "
     (d/li
-      #js {class: "active"}
+      #js {:class  "active"}
       " Dashboard "
       (d/i
-        #js {class: "fa fa-dashboard"}))))
+        #js {:class  "fa fa-dashboard"}))))
 ```
 
