@@ -1,0 +1,30 @@
+<html>
+  <head>
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.1/jquery.min.js"></script>
+  </head>
+  <body>
+  <ul>
+    <li><a data-elt-id="bookmarklet" href="#">Om Razor</a></li>
+  </ul>
+  <script>
+(function () {
+  var elt = $('[data-elt-id="bookmarklet"]'),
+      bmarkFn = function () {
+        var scriptElt = document.createElement('script'),
+        body = document.getElementsByTagName('body')[0];
+        scriptElt.src = "http://asymmetrical-view.com/libs/om-razor.js";
+        body.appendChild(scriptElt);
+
+      },
+      bmarkCode = bmarkFn.toString(),
+      body;
+
+      console.log(bmarkCode);
+
+      elt.attr('href', 'javascript:(' + bmarkCode + '())');
+
+// javascript:(function()%7Bvar el%3Ddocument.createElement("div"),b%3Ddocument.getElementsByTagName("body")%5B0%5D,otherlib%3D!1,msg%3D""%3Bel.style.position%3D"fixed",el.style.height%3D"32px",el.style.width%3D"220px",el.style.marginLeft%3D"-110px",el.style.top%3D"0",el.style.left%3D"50%25",el.style.padding%3D"5px 10px",el.style.zIndex%3D1001,el.style.fontSize%3D"12px",el.style.color%3D"%23222",el.style.backgroundColor%3D"%23f99"%3Bfunction showMsg()%7Bvar txt%3Ddocument.createTextNode(msg)%3Bel.appendChild(txt),b.appendChild(el),window.setTimeout(function()%7Btxt%3Dnull,typeof jQuery%3D%3D"undefined"%3Fb.removeChild(el):(jQuery(el).fadeOut("slow",function()%7BjQuery(this).remove()%7D),otherlib%26%26(window.%24jq%3DjQuery.noConflict()))%7D,2500)%7Dif(typeof jQuery!%3D"undefined")return msg%3D"This page already using jQuery v"%2BjQuery.fn.jquery,showMsg()%3Btypeof %24%3D%3D"function"%26%26(otherlib%3D!0)%3Bfunction getScript(url,success)%7Bvar script%3Ddocument.createElement("script")%3Bscript.src%3Durl%3Bvar head%3Ddocument.getElementsByTagName("head")%5B0%5D,done%3D!1%3Bscript.onload%3Dscript.onreadystatechange%3Dfunction()%7B!done%26%26(!this.readyState%7C%7Cthis.readyState%3D%3D"loaded"%7C%7Cthis.readyState%3D%3D"complete")%26%26(done%3D!0,success(),script.onload%3Dscript.onreadystatechange%3Dnull,head.removeChild(script))%7D,head.appendChild(script)%7DgetScript("http://code.jquery.com/jquery.min.js",function()%7Breturn typeof jQuery%3D%3D"undefined"%3Fmsg%3D"Sorry, but jQuery was not able to load":(msg%3D"This page is now jQuerified with v"%2BjQuery.fn.jquery,otherlib%26%26(msg%2B%3D" and noConflict(). Use %24jq(), not %24().")),showMsg()%7D)%7D)()%3B
+}());
+  </script>
+  </body>
+</html>

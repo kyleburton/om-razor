@@ -13,8 +13,13 @@
 
     result = OmRazor.treeToWidget(tree, result, '  ') + "\n)\n";
 
-    return result;
+    return OmRazor.cleanupCloseParens(result);
   };
+
+  OmRazor.cleanupCloseParens = function (s) {
+    return s.replace(/\s*\n\s*\)/g, ")");
+  };
+
 
   OmRazor.attrsToCljsMap = function (attrs) {
     var pairs = [];
@@ -25,12 +30,11 @@
   };
 
   OmRazor.treeToWidget = function (tree, buf, indent) {
-    debugger;
     var node = tree.elt[0], omFn = 'd/' + node.nodeName.toLowerCase();
     buf += indent + "(" + omFn + "\n"
          + indent + "  #js " + OmRazor.attrsToCljsMap(tree.attrs) + "\n";
-    if (node.text && node.text.length > 0) {
-      buf += indent + "\"" + node.text + "\"\n";
+    if (tree.text && tree.text.length > 0) {
+      buf += indent + "  \"" + tree.text + "\"\n";
     }
     // blows the stakc
     $.each(tree.children, function (idx, n) {
@@ -48,10 +52,15 @@
     return o;
   };
 
+  OmRazor.trimText = function (s) {
+    return s.replace(/[\r\n\s]+/g, " ");
+  };
+
   OmRazor.nodeText = function (elt) {
-    return elt.contents().filter(function() {
+    var text = elt.contents().filter(function() {
       return this.nodeType == 3;
     }).text();
+    return OmRazor.trimText(text);
   };
 
   OmRazor.domNodeToTree = function (node) {

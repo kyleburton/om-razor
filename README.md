@@ -18,31 +18,13 @@ Then open the javascript console and run `OmRazor.domToOm` pasing at a minimum t
 
 When run for the SB Admin Theme, that produces:
 
-    n = OmRazor.domToOm({selector: '.breadcrumb', name: 'breadcrumb'})
     (defn breadcrumb [data owner] 
       (d/ol
         #js {class: "breadcrumb"}
-        (d/li
-          #js {}
-          (d/i
-            #js {class: "fa fa-dashboard"}
-          )
-          (d/a
-            #js {href: "index.html"}
-          "Dashboard"
-          )
-        )
+        " "
         (d/li
           #js {class: "active"}
+          " Dashboard "
           (d/i
-            #js {class: "fa fa-edit"}
-          )
-        )
-      )
-    )
+            #js {class: "fa fa-dashboard"}))))
 
-
-# TODO
-
-* create a bookmarklet to inject OmRazor (and jQuery) into the page
-* closing parens should be on previous line...
