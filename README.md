@@ -1,10 +1,10 @@
 # OM Razor
 
-Cut, slice, a web page into [OM](https://github.com/swannodette/om) DOM builders.
+Cut, slice, transform, parts of a web page into [OM](https://github.com/swannodette/om) DOM builders.
 
-In found the process of converting a [Bootstrap Theme](http://getbootstrap.com/), [SB Admin](http://startbootstrap.com/template-overviews/sb-admin/), into OM DOM builders very tedious.
+In found the process of converting [Bootstrap Themes](http://getbootstrap.com/) (like [SB Admin](http://startbootstrap.com/template-overviews/sb-admin/)) into OM DOM builders to be tedious.
 
-Given the example markup, the process of conversion is largely rote.  This is quick hack to do just that.
+Given the example markup, the process of conversion is largely rote.  This is quick hack to automate the process.
 
 To run the code-generator, place the following script tags into your page:
 
