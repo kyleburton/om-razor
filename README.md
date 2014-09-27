@@ -24,12 +24,12 @@ When run for the SB Admin Theme, that produces:
 ```clojure
 (defn breadcrumb [data owner] 
   (d/ol
-    #js {:class  "breadcrumb"}
+    #js {:className  "breadcrumb"}
     " "
     (d/li
-      #js {:class  "active"}
+      #js {:className  "active"}
       " Dashboard "
       (d/i
-        #js {:class  "fa fa-dashboard"}))))
+        #js {:className  "fa fa-dashboard"}))))
 ```
 
